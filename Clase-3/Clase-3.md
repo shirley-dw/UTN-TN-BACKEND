@@ -8,7 +8,7 @@ Clase 3º 14/08 Backend UTN TN PWI
 
 # Instalamos Typescript de manera global:
 · En la terminal con Ctrl + J escribo "npm i -g typescript"
-· Para corroborar que se haya instalado bien hago "tsc"
+· Para corroborar que se haya instalado bien hago "tsc" esto compila el archivo TS y lo transforma en uns archivo JS.
 · Al poner el comando tsc suele salir un error es un problema de los usuarios de Windows.
 · Este se habilita desde la terminal de PowerShell.
 
