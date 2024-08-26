@@ -16,16 +16,21 @@ const producto_2 = {
     stock: 3
 };
 console.log(producto.nombre); /* Accedo a un atributo con el punto */
+
 console.log(producto['nombre']); /* Acceder a un atributo con corchete y entre comillas */
+
 /* Mala practica ya que en JS esto funciona y se modifica el objeto original */
 const venderProducto = (producto) => {
     console.log('Haz vendido:' + producto.nombre + 'y ahora te quedan' + producto.stock);
 };
 // Creando una propiedad
 producto.stock = 10;
+
 /* Esto en JS se puede realizar pero no se sugiere ya que modifica el objeto original al que apunta */
+
 // Reasigno el valor de la propiedad
 producto.nombre = 'Tv Noblex';
+
 // Instacio los objetos
 venderProducto(producto);
 venderProducto(producto_2);

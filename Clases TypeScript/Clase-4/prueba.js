@@ -29,3 +29,13 @@ resultado.presentarProductos() // Ejecuto el metodo, esta se puede ejecutar las 
 
 //Metodos
 
+let numeros = [1,2,3,4,5,6,7,8,9,10]
+
+let sumarNumeros = (numeros) => {
+    let resultado = 0
+    for (let i = 0; i < numeros.length; i++) {
+        resultado += numeros[i]
+    }
+    console.log('Sumaste los numeros')
+    return resultado
+}
