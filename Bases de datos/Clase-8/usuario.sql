@@ -5,7 +5,8 @@ el correo electrónico ‘pepe@gmail.com’.*/
 
 ALTER TABLE users;
 /* Explicación: ALTER TABLE se utiliza para modificar la estructura de una tabla existente, como agregar, eliminar o modificar columnas.*/
-
+ ALTER TABLE usuarios CHANGE COLUMN  USUARIO_ID ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY;
+/* Explicación: Este comando cambia el nombre de la columna USUARIO_ID a ID en la tabla usuarios.*/
 SELECT * FROM users;
 /* Explicación: Este comando selecciona y muestra todos los registros de la tabla users. Es útil para ver todos los datos 
 almacenados en esa tabla.*/
