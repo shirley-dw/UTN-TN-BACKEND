@@ -1,0 +1,7 @@
+[{
+    "user_id": "ObjectId()",
+    "channel_id": "ObjectId()",
+    "content": "hola mundo",
+    "created_at": "new Date()"
+}]
+

@@ -1,0 +1,6 @@
+[{
+    "username": "admin",
+    "password": "admin",
+    "created_at": "new Date()",
+    "active": true
+}]

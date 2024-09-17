@@ -1,0 +1,5 @@
+[{
+    "name": "general",
+    "created_at": "new Date()",
+    "workspace_id": "ObjectId()"
+}]

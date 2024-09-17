@@ -1,0 +1,6 @@
+[{
+    "name": "users",
+    "created_at": "new Date()",
+    "owner_id": "ObjectId()",
+    "active": true
+}]
