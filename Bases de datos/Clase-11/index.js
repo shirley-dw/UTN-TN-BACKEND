@@ -1,6 +1,6 @@
 const {createTxt} = require('./utils/filesystem.js'); //Importo la funcion createTxt desde el archivo filesystem.js
 
-createTxt('prueba', 'Hola pepe');
+createTxt('Mi primer archivo', 'Shirley Vokac :)');
 
 
 /* 
