@@ -52,7 +52,8 @@ ________________________________________________________________________________
  Nodemon es una herramienta muy útil para el desarrollo de aplicaciones basadas en Node.js. 
  Su principal función es monitorear los archivos de tu aplicación y reiniciar automáticamente el servidor cuando detecta cambios en el código.
 
- _________________________________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________________
+
 # Require:
   Require es una funcion que nos permite importar modulos.
 - Ejemplo de uso:
@@ -66,3 +67,41 @@ ________________________________________________________________________________
 - writeFileSync es una funcion que nos permite escribir archivos, necesita recibir tres parametros el primero es el tipo
   de archivo que vamos a crear, el segundo es el texto y el tercero es encoding indicando que tipo de archivo es.
 - encoding: 'utf-8' es para que me acepte los caracteres especiales.
+
+________________________________________________________________________________________________________________________________________________
+
+# UTF-8: CODIFICACION 
+
+UTF-8 es una codificación de caracteres que le asigna una cadena de bits determinada, a cada carácter Unicode y que puede leerse como un número binario. Esto significa que UTF-8 asigna un número binario fijo a todas las consonantes, cifras y símbolos de un número cada vez mayor 
+de idiomas.
+
+* ¿Qué caracteres incluye UTF-8?
+1920 caracteres que incluyen los caracteres romances más signos diacríticos, y los alfabetos griego, cirílico, copto, armenio, hebreo, árabe, siríaco y Thaana entre otros.
+
+________________________________________________________________________________________________________________________________________________
+
+# Promesas(promise):
+
+* Tienen tres estados:
+- onRejected: Si la promesa falla.
+Ejemplo: 
+filesystem.promises.writeFile(file, text, {encoding: 'utf-8'}, (err) => {
+    if (err) {
+        console.log(err)
+    }
+})
+
+- Pendiente: Si la promesa es pendiente.
+Ejemplo: 
+filesystem.promises.writeFile(file, text, {encoding: 'utf-8'}, (pendiente) => {
+    if (pendiente) {
+        console.log('Pendiente')
+    }
+})
+
+- OnfullFied o completo: Si la promesa se completa
+filesystem.promises.writeFile(file, text, {encoding: 'utf-8'}, (completo) => {
+    if (completo) {
+        console.log('Archivo creado exitosamente')
+    }
+})
