@@ -2,21 +2,21 @@
 import filesystem from 'fs';
 
 const crearJson = async (fileName, data) => {
-    try{
-        if(!fileName || !data || typeof fileName !== 'string' || typeof data !== 'object'){
-            throw {code: 'ERR_INVALID_ARG_TYPE', detail: 'El nombre del archivo debe ser un string y el contenido debe ser un objeto'}
-    }
-    if(!data || typeof data !== 'object'|| data === null){
-        throw {code: 'ERR_INVALID_ARG_TYPE', detail: 'El contenido del archivo debe ser un objeto'}
-        await filesystem.promises.writeFile(`${fileName}.json`, JSON.stringify(data), {encoding: 'utf-8'})
+    try {
+        if (!fileName || !fileName.length >= 1 || typeof fileName !== 'string') {
+            throw { code: 'ERR_INVALID_ARG_TYPE', detail: 'El nombre del archivo tener al menos un caracter' }
+        }
+        if (!data || typeof (data) !== 'object' || data === null) {
+            throw { code: 'ERR_INVALID_ARG_TYPE', detail: 'El contenido del archivo debe ser un objeto' }
+        }
+        await filesystem.promises.writeFile(`${fileName}.json`, JSON.stringify(data), { encoding: 'utf-8' })
         console.log('El archivo ' + fileName + ' fue creado con exito')
     }
-    }
 
-    catch(error){
-        if(error.code === 'ERR_INVALID_ARG_TYPE'){
+    catch (error) {
+        if (error.code === 'ERR_INVALID_ARG_TYPE') {
             console.error(error.detail)
-        }else{
+        } else {
             throw error
         }
     }
@@ -24,22 +24,22 @@ const crearJson = async (fileName, data) => {
 
 
 const leerJson = async (name) => {
-    try{
+    try {
         const nameJSON = name + '.json'
-        const content = await filesystem.promises.readFile(nameJSON, {encoding: 'utf-8'} )
+        const content = await filesystem.promises.readFile(nameJSON, { encoding: 'utf-8' })
         const dataJSON = JSON.parse(content)
         console.log(dataJSON)
         return dataJSON
-}
+    }
 
-    catch(error){
+    catch (error) {
         console.error(`No se encontro ningun archivo con el nombre ${name}.json`)
         throw error
     }
 }
 
 
-export {crearJson,leerJson}
+export { crearJson, leerJson }
 
 /* import filesystem from 'fs'
  //Crear la siguiente funcion
@@ -144,5 +144,5 @@ REGLAS:
 -No puede crashear la aplicacion, los errores deben estar manejados
 -Los parametros de cada funcion deben estar validados y en caso de no estar deberan tener sus propios throws
 
-*/ 
+*/
 
