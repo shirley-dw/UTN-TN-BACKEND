@@ -1,0 +1,24 @@
+[{
+    "nombre": "Pepe",
+    "username": "pepesito123",
+    "email": "pepeelcrack@gmail.com",
+    "password": "123456",
+    "ultima_conexion": "2021-01-01",
+    "id": 1
+},
+{
+    "nombre": "juan",
+    "username": "juansito123",
+    "email": "juanelcrack@gmail.com",
+    "password": "123456",
+    "ultima_conexion": "ayer",
+    "id": 2
+},
+{
+    "nombre": "mario",
+    "username": "maritosito123",
+    "email": "maritoelcrack@gmail.com",
+    "password": "123456",
+    "ultima_conexion": "hoy",
+    "id": 3
+}]
