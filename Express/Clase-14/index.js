@@ -20,9 +20,11 @@ import express from "express";
 
 const app = express(); // Se crea el servidor
 const PORT = 8000;// Variable del puerto
+
 //Todas las consultas HTTP que se hagan a mi server pasaran por app.use
 // Expreess.json es un middleware si los headers de la consulta son content-type: application/json entonces guarda el body como json
 app.use(express.json()); // Para leer el body esto se concoe como Middlewares programa que se ejecuta entre medio de otro programa
+
 app.use(express.urlencoded({ extended: true })); // Extended: false es para que no me de error si no me envia el body
 // Creo un endpoint ping => vamos a responder con un texto con contenido "pong"
 app.get('/ping', (req, res) => {
@@ -61,33 +63,37 @@ app.post('/ping', (req, res) => {
 
 
 /* Mejorar codigo */
+
+
 app.post('/register', (req, res) => {
-    const { username, password } = req.body
-    let errorMessage = '' // Variable para almacenar el error
-    if (!username) { 
-        errorMessage = 'Debes tener un username valido'
+    const { username, password } = req.body;
+    let errorMessage = ''; // Variable para almacenar el error
+
+    if (!username) {
+        errorMessage = 'Debes tener un username valido';
+    } else if (!password || password.length === 0) {
+        errorMessage = 'Debes tener un password valido';
     }
-    if (!password) {
-        errorMessage = 'Debes tener un password valido'
-    }
-    if (errorMessage) { 
+
+    if (errorMessage) {
         const response = {
             ok: false,
             status: 400,
             message: errorMessage
-        }
-        res.json(response)
-    } else { 
-        console.log(`Tu username es: ${username} y tu password es: ${password}`)
+        };
+        res.json(response);
+    } else {
+        console.log(`Tu username es: ${username} y tu password es: ${password}`);
         const response = {
             ok: true,
             status: 200,
             message: 'Usuario creado con exito'
-        }
-        res.json(response)
+        };
+        res.json(response);
     }
-    
-})
+});
+
+
 
 const productos = [ 
     {
