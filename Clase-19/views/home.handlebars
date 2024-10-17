@@ -1,0 +1,33 @@
+<h1 style="color: red;">Mi primer proyecto con express-handlebars</h1>
+
+{{!-- const view_props = {
+        layaout: 'main',
+        view_name: 'home',
+        status: 200,
+        ok: true,
+        data: { // Propiedades de la vista
+            products: productos, // Paso el array de productos
+            title: 'Ofertas de la semana',
+
+            
+        },
+        helpers: { // Helpers son funciones que se ejecutan antes de renderizar una plantilla
+        
+        }
+
+    } --}}
+
+<h1>{{this.data.title}}</h1>
+{{#each this.data.products}}
+    <div>
+        <h2>{{this.nombre}}</h2>
+        <div><b>Precio:</b> ${{this.precio}}</div>
+        <div><b>Quedan:</b> {{this.stock}} unidades disponibles</div>
+        <a href="/product/detail/{{this.id}}">Ir a detalle</a> {{!-- Poner la barra al final de la route --}}
+        
+    </div>
+    <div>
+        <a href="/product/new">Cargar nuevo producto</a>
+    </div>
+{{/each}}
+{{!-- each products es un helper que se ejecuta antes de renderizar la vista --}}

@@ -1,0 +1,33 @@
+<h1>Cargar producto</h1>
+<form>
+    <div>
+        <label for="nombre">Ingrese nombre:</label>
+        <input placeholder="tv samsung" id="nombre" name="nombre" value="{{thi.data.form_state.nombre}}"/>
+    </div>
+    <div>
+        <label for="precio">Ingrese precio:</label>
+        <input id="precio" name="precio"/>
+    </div>
+    <div>
+        <label for="stock">Ingrese stock:</label>
+        <input id="stock" name="stock"/>
+    </div>
+    <div>
+        <label>Seleccione las categorias de su producto:</label>
+        <span>Tecnologia</span>
+        <input type="checkbox" value="tecnologia" name="categoria" />
+        <br>
+        <span>Hogar</span>
+        <input type="checkbox" value="hogar" name="categoria" />
+        <br>
+        <span>Office</span>
+        <input type="checkbox" value="office" name="categoria" />
+        <br>
+    </div>
+    <div>
+        <label for="descripcion">Ingrese descripcion:</label>
+        <textarea id="descripcion" name="descripcion"></textarea>
+    </div>
+    
+    <input type="submit" value="Crear producto">
+</form>
