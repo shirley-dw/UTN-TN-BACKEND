@@ -1,0 +1,44 @@
+[
+  {
+    "title": "TV Samsung 50 pulgadas",
+    "price": 5000,
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/tv-512.png",
+    "categoria": "electronica",
+    "active": false,
+    "id": 1
+  },
+  {
+    "title": "TV Samsung 50 pulgadas",
+    "price": 5000,
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/tv-512.png",
+    "categoria": "electronica",
+    "active": true,
+    "id": 2
+  },
+  {
+    "title": "Celular Samsung A10",
+    "price": 5000,
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/tv-512.png",
+    "categoria": "Celulares",
+    "active": true,
+    "id": 3
+  },
+  {
+    "title": "TV Samsung 20 pulgadas",
+    "price": 5000,
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/tv-512.png",
+    "categoria": "electronica",
+    "active": true,
+    "id": 4
+  },
+  {
+    "id": 5,
+    "active": true
+  },
+  {
+    "id": 6,
+    "title": "celular",
+    "categoria": "celulares",
+    "active": true
+  }
+]
