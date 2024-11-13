@@ -247,33 +247,31 @@ export const forgotPasswordController = async (req, res) => {
 };
 
 
-
 export const recoveryPasswordController = async (req, res) => {
     try {
-        const { reset_token, password } = req.params; // Extrae el token y la nueva contraseña del parametros de la URL
-        console.log(reset_token, password)
+        const { password, reset_token } = req.body;
+       /*  console.log('Reset token:', reset_token);
+        console.log('New password:', password);
+ */
+        const decoded = jwt.verify(reset_token, ENVIROMENT.SECRET_KEY );
+        console.log('Decoded token:', decoded);
 
-        const decoded = jwt.verify(reset_token, ENVIROMENT.SECRET_KEY); // Verifica token JWT
-
-        const user = await User.findOne({ email: decoded.email }); // Busca al usuario por email en la base de datos
-        if (!user) { // Si no se encuentra el usuario
+        const user = await User.findOne({ email: decoded.email });
+        if (!user) {
+            console.log('Usuario no encontrado');
             return res.status(404).json({ message: 'Usuario no encontrado' });
         }
 
-        // Hasheo la contra antes de guardar
-        const salt = await bcrypt.genSalt(10); // Genera una sal
-        const hashedPassword = await bcrypt.hash(password, salt); // Hashea la contraseña con sal generada
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
 
-        user.password = hashedPassword; // Asigna la contra hasheada al usuario
-        await user.save(); // Guarda los cambios en la base de datos
+        user.password = hashedPassword;
+        await user.save();
 
-        // URL del front-end para redirigir después del restablecimiento de contraseña
         const resetUrl = `${ENVIROMENT.FRONTEND_URL}/login`;
-
-        res.status(200).json({ message: 'Contraseña restablecida correctamente', redirectUrl: resetUrl }); // Envio9 resp exitosa con la URL
-    } 
-    catch (error) {
+        res.status(200).json({ message: 'Contraseña restablecida correctamente', redirectUrl: resetUrl });
+    } catch (error) {
         console.error('Error al restablecer la contraseña:', error);
-        res.status(500).json({ message: 'Error interno del servidor' }); // Manejo de errores (MEJORAR)ej: Faltan parametros mayus,num,etc
+        res.status(500).json({ message: 'Error interno del servidor', error: error.message });
     }
 };
